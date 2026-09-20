@@ -1,2 +1,589 @@
 # StudentStudyHu
 Student Study Hub - Notes, PDFs and Learning Tools
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Study Hub</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#172033;
+}
+
+nav{
+  background:#111827;
+  color:white;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+}
+
+.hero{
+  padding:70px 6%;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.search{
+  width:90%;
+  max-width:600px;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:45px auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.card,.tool{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  margin-bottom:15px;
+}
+
+button,.btn{
+  display:inline-block;
+  padding:11px 16px;
+  margin:4px 3px;
+  border:none;
+  border-radius:8px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.download{
+  background:#16a34a;
+}
+
+.view{
+  background:#7c3aed;
+}
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+#result{
+  margin-top:12px;
+  font-weight:bold;
+}
+
+#time{
+  font-size:45px;
+  text-align:center;
+  font-weight:bold;
+  margin:15px;
+}
+
+.video{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:50px;
+}
+
+@media(max-width:650px){
+  nav{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav a{
+    margin:0 6px;
+    font-size:14px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">📚 Student Study Hub</div>
+
+  <div>
+    <a href="#subjects">Subjects</a>
+    <a href="#tools">Tools</a>
+    <a href="#videos">Videos</a>
+  </div>
+</nav>
+
+
+<section class="hero">
+
+  <h1>Student Study Hub</h1>
+
+  <p>Notes • PDFs • Tools • Videos • Learning</p>
+
+  <input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="🔍 Search subjects..."
+    onkeyup="searchSubjects()"
+  >
+
+</section>
+
+
+<section class="container" id="subjects">
+
+<h2 class="title">📚 Study Subjects</h2>
+
+<div class="cards" id="subjectList">
+
+
+<div class="card subject">
+
+<h3>⚡ Electrical Engineering</h3>
+
+<p>
+Basic Electrical Engineering notes,
+formulas and study materials.
+</p>
+
+<a class="btn view" href="pdf/bee-unit-1.pdf" target="_blank">
+👁️ View PDF
+</a>
+
+<a class="btn download" href="pdf/bee-unit-1.pdf" download>
+📥 Download PDF
+</a>
+
+</div>
+
+
+<div class="card subject">
+
+<h3>📐 Mathematics</h3>
+
+<p>
+Engineering Mathematics formulas,
+examples and notes.
+</p>
+
+<a class="btn view" href="pdf/mathematics-unit-1.pdf" target="_blank">
+👁️ View PDF
+</a>
+
+<a class="btn download" href="pdf/mathematics-unit-1.pdf" download>
+📥 Download PDF
+</a>
+
+</div>
+
+
+<div class="card subject">
+
+<h3>🔬 Physics</h3>
+
+<p>
+Applied Physics concepts,
+formulas and numerical practice.
+</p>
+
+<a class="btn view" href="pdf/physics-unit-1.pdf" target="_blank">
+👁️ View PDF
+</a>
+
+<a class="btn download" href="pdf/physics-unit-1.pdf" download>
+📥 Download PDF
+</a>
+
+</div>
+
+
+<div class="card subject">
+
+<h3>💻 Computer</h3>
+
+<p>
+Computer fundamentals,
+digital technology and programming.
+</p>
+
+<a class="btn view" href="pdf/computer-unit-1.pdf" target="_blank">
+👁️ View PDF
+</a>
+
+<a class="btn download" href="pdf/computer-unit-1.pdf" download>
+📥 Download PDF
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container" id="tools">
+
+<h2 class="title">🛠️ Student Tools</h2>
+
+<div class="tools">
+
+
+<div class="tool">
+
+<h3>🧮 Calculator</h3>
+
+<input
+  type="text"
+  id="calc"
+  placeholder="Example: 25+10*2"
+>
+
+<button onclick="calculate()">
+Calculate
+</button>
+
+<button onclick="clearCalculator()">
+Clear
+</button>
+
+<p id="result"></p>
+
+</div>
+
+
+<div class="tool">
+
+<h3>⏱️ Study Timer</h3>
+
+<div id="time">25:00</div>
+
+<button onclick="startTimer()">▶ Start</button>
+
+<button onclick="pauseTimer()">⏸ Pause</button>
+
+<button onclick="resetTimer()">↻ Reset</button>
+
+</div>
+
+
+<div class="tool">
+
+<h3>🌙 Dark Mode</h3>
+
+<p>Change the website appearance.</p>
+
+<button onclick="toggleDarkMode()">
+🌙 Toggle Theme
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container" id="videos">
+
+<h2 class="title">🎥 Learning Videos</h2>
+
+<div class="card">
+
+<h3>📺 YouTube Learning</h3>
+
+<p>
+Add your educational YouTube video here.
+</p>
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO_ID"
+title="Educational Video"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2 class="title">ℹ️ About</h2>
+
+<div class="card">
+
+<p>
+Student Study Hub is an educational platform
+for students to access notes, PDFs, videos
+and useful study tools in one place.
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h3>📚 Student Study Hub</h3>
+
+<p>Learn • Practice • Improve</p>
+
+<p>© 2026 Student Study Hub</p>
+
+</footer>
+
+
+<script>
+
+function searchSubjects(){
+
+  let input =
+  document.getElementById("search").value.toLowerCase();
+
+  let subjects =
+  document.querySelectorAll(".subject");
+
+  subjects.forEach(function(card){
+
+    let text =
+    card.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      card.style.display="block";
+    }
+    else{
+      card.style.display="none";
+    }
+
+  });
+
+}
+
+
+function calculate(){
+
+  let expression =
+  document.getElementById("calc").value;
+
+  let result =
+  document.getElementById("result");
+
+  if(expression.trim()===""){
+
+    result.innerText="Please enter a calculation.";
+
+    return;
+  }
+
+  try{
+
+    let answer =
+    Function('"use strict"; return ('+expression+')')();
+
+    result.innerText="Answer: "+answer;
+
+  }
+
+  catch(error){
+
+    result.innerText="Invalid calculation.";
+
+  }
+
+}
+
+
+function clearCalculator(){
+
+  document.getElementById("calc").value="";
+
+  document.getElementById("result").innerText="";
+
+}
+
+
+function toggleDarkMode(){
+
+  document.body.style.background =
+  document.body.style.background === "rgb(15, 23, 42)"
+  ? "#f4f7fb"
+  : "#0f172a";
+
+  document.body.style.color =
+  document.body.style.color === "rgb(248, 250, 252)"
+  ? "#172033"
+  : "#f8fafc";
+
+}
+
+
+let seconds=25*60;
+
+let timer=null;
+
+
+function updateTimer(){
+
+  let minutes=Math.floor(seconds/60);
+
+  let sec=seconds%60;
+
+  document.getElementById("time").innerText =
+  String(minutes).padStart(2,"0")
+  +":"+String(sec).padStart(2,"0");
+
+}
+
+
+function startTimer(){
+
+  if(timer!==null){
+    return;
+  }
+
+  timer=setInterval(function(){
+
+    if(seconds>0){
+
+      seconds--;
+
+      updateTimer();
+
+    }
+
+    else{
+
+      clearInterval(timer);
+
+      timer=null;
+
+      alert("🎉 Study session completed!");
+
+    }
+
+  },1000);
+
+}
+
+
+function pauseTimer(){
+
+  clearInterval(timer);
+
+  timer=null;
+
+}
+
+
+function resetTimer(){
+
+  clearInterval(timer);
+
+  timer=null;
+
+  seconds=25*60;
+
+  updateTimer();
+
+}
+
+
+updateTimer();
+
+</script>
+
+</body>
+</html>
